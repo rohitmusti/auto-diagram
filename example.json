@@ -1,0 +1,9 @@
+{
+  "organization": "ABC Corp",
+  "hosting": "aws",
+  "sourceControl": "github",
+  "collaborationTools": ["slack","jira"],
+  "environments": ["dev", "test"],
+  "appContainers": ["springboot", "vue", "mongo"],
+  "testLibraries": ["junit", "jest"]
+}
