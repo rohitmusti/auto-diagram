@@ -1,6 +1,6 @@
 {
   "organization": "ABC Corp",
-  "hosting": "aws",
+  "hosting": ["openstack", "aws"],
   "sourceControl": "github",
   "collaborationTools": ["slack","jira"],
   "environments": ["dev", "test"],
