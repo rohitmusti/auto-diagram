@@ -17,5 +17,5 @@ We're following the philosophy laid out in [Consumer-Driven Contracts](https://m
 The API is versioned using [Semver](https://semver.org/). Backwards-compatible feature updates (e.g., new properties added) are indicated by minor releases. Breaking changes (e.g., an endpoint is renamed or a property is removed) are indicated by major releases.
 
 ## Front-end dev resources
-https://learnlayout.com
-https://vuesjs.org/v2/guide/index.html
+- https://learnlayout.com
+- https://vuesjs.org/v2/guide/index.html
