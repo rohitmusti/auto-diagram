@@ -1,82 +1,46 @@
 ---
-openapi: 3.0.0
+swagger: 2.0
 info:
   title: Auto Diagram
-  description: Generate project diagrams from information about that project.
-  license:
-    name: Apache 2.0
-    url: https://www.apache.org/licenses/LICENSE-2.0
-  version: 0.1.0
+  description:
+  version: 1.0.0
 paths:
-  /diagram:
+  /diagrams/high-level:
     post:
-      summary: Create a new diagram from the supplied parameters.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/stack'
-            examples:
-              Example stack:
-                value:
-                  organization: ABC Corp
-                  hosting: aws
-                  sourceControl: github
-                  collaborationTools:
-                  - slack
-                  - jira
-                  environments:
-                  - dev
-                  - test
-                  appContainers:
-                  - springboot
-                  - vue
-                  - mongo
-                  testLibraries:
-                  - junit
-                  - jest
-        required: true
+      summary: Generate a new diagram from the supplied parameters.
+      parameters:
+      - name: body
+        in: body
+        schema:
+          $ref: '#/definitions/Stack'
       responses:
         200:
-          description: Returns the generated diagram.
-          content:
-            image/png: {}
-        400:
-          description: The diagram parameters were not valid or were not supplied.
-          content:
-            application/json: {}
-components:
-  schemas:
-    stack:
-      title: Root Type for stack
-      description: The root of the stack type's schema.
-      required:
-      - appContainers
-      - collaborationTools
-      - environments
-      - hosting
-      - testLibraries
-      type: object
-      properties:
-        organization:
+          description: Diagram created. Response body will contain the diagram image.
+definitions:
+  Stack:
+    title: Root Type for Stack
+    description: The root of the Stack type's schema.
+    type: object
+    properties:
+      organization:
+        type: string
+      hosting:
+        type: string
+      sourceControl:
+        type: string
+      collaborationTools:
+        type: array
+        items:
           type: string
-        hosting:
+      environments:
+        type: array
+        items:
           type: string
-        sourceControl:
+      appContainers:
+        type: array
+        items:
           type: string
-        collaborationTools:
-          type: array
-          items:
-            type: string
-        environments:
-          type: array
-          items:
-            type: string
-        appContainers:
-          type: array
-          items:
-            type: string
-        testLibraries:
-          type: array
-          items:
-            type: string
+      testLibraries:
+        type: array
+        items:
+          type: string
