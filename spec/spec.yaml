@@ -8,7 +8,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0
   version: 0.1.0
 paths:
-  /diagram:
+  /diagrams/high-level:
     post:
       summary: Create a new diagram from the supplied parameters.
       requestBody:
