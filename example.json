@@ -1,9 +1,6 @@
-{
-  "organization": "ABC Corp",
-  "hosting": ["openstack", "aws"],
-  "sourceControl": "github",
-  "collaborationTools": ["slack","jira"],
-  "environments": ["dev", "test"],
-  "appContainers": ["springboot", "vue", "mongo"],
-  "testLibraries": ["junit", "jest"]
-}
+
+[
+  { "id": 0, "text": "Openshift" },
+  { "id": 1, "text": "Openstack" },
+  { "id": 2, "text": "AWS" }
+]

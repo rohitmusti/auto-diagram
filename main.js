@@ -1,9 +1,25 @@
-var app = new Vue({
-	el: '#app',
+Vue.component('infrastructure', {
+	props: ['struct'],
+	template: '<div class="foundations">{{ struct.text }}</div>'
+})
+
+var app1 = new Vue({
+	el: '#app-1',
 	data: {
-		message: 'Hello Vue!'
+		list: []
+	},
+	mounted(){
+		var temp = this;
+		axios.get('example.json')
+		.then(function (response) {
+			temp.list = response.data;
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
 	}
 })
+
 var app2 = new Vue({
 	el: '#app-2',
 	data: {
