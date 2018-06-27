@@ -18,21 +18,33 @@ p {
 }
 
 .floors {
-	max-width: 80%;
-	padding: 50px;
+	max-width: 70%;
+	padding: 5%;
 	max-height: 30%;
 	border: solid blue 10px;
-	margin-right: 200px;
+	margin-right: 20%;
 	margin-bottom: 2.5%;
+	margin-left: 10%;
+
 }
 
 .kitchen {
-	max-width: 80%;
-	padding: 50px;
+	max-width: 70%;
+	padding: 5%;
 	max-height: 30%;
 	border: solid black 10px;
-	margin-right: 200px;
+	margin-right: 20%;
+	margin-left: 10%;
 	margin-bottom: 2.5%;
+}
+
+.pipeline {
+	float: left;
+	max-width: 10%;
+	padding: 5%;
+	padding: 1%;
+	border: solid green 10px;
+	max-height: 20%
 }
 
 section {
