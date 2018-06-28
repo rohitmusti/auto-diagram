@@ -12,25 +12,36 @@
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla laoreet vulputate. Ut accum
 					Lorem ipsum dolor sit ,
 			</div>
-			<section>
-				text
-			</section>
 
+			<div id="collaboration-app">
+				<collaboration-tag
+					v-for="item in list"
+					v-bind:struct="item"
+					v-bind:key="item.id">
+				</collaboration-tag>
+			</div>
+			<div id="source-app">
+				<source-tag
+					v-for="item in list"
+					v-bind:struct="item"
+					v-bind:key="item.id">
+				</source-tag>
+			</div>
 			<div id=environment-app>
-		  	<environment-tag
-			   	v-for="item in list"
-			   	v-bind:struct="item"
-			   	v-bind:key="item.id">
+			  	<environment-tag
+				   	v-for="item in list"
+				   	v-bind:struct="item"
+				   	v-bind:key="item.id">
 				</environment-tag>
 			</div>
 
 			<div id=foundations-app>
-		  	<foundation-tag
-			   	v-for="item in list"
-			   	v-bind:struct="item"
-			   	v-bind:key="item.id">
-		  	</foundation-tag>
-		</div>
+			  	<foundation-tag
+				   	v-for="item in list"
+				   	v-bind:struct="item"
+				   	v-bind:key="item.id">
+			  	</foundation-tag>
+			</div>
 
 		</div>
 

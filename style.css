@@ -21,7 +21,7 @@ p {
 	width: 70%;
 	max-width: 750px;
 	padding: 2.5%;
-	max-height: 30%;
+	max-height: 300px;
 	border: solid blue 2.5px;
 	margin-right: 20%;
 	margin-left: 10%;
@@ -60,13 +60,24 @@ p {
 
 }
 
-section {
-	border: solid red 10px;
+.collaboration {
+	border: solid red 5px;
 	width: 20%;
 	max-width: 400px;
+	margin-left: 70%;
 	padding: 5%;
 	float: right;
 }
+
+.source {
+	border: solid purple 5px;
+	width: 20%;
+	max-width: 400px;
+	margin-left: 70%;
+	padding: 5%;
+	float: right;
+}
+
 
 .minicont {
 	display:inline-block;
