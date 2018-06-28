@@ -41,6 +41,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/residency'
+              examples:
+                XYZ Corp:
+                  value:
+                    metadata:
+                      customerName: XYZ Corp
+                      start: 2018-10-08
+                      end: 2018-11-19
+                    stack:
+                      hosting:
+                      - openstack
+                      - aws
+                      sourceControl: github
+                      collaborationTools:
+                      - slack
+                      - jira
+                      environments:
+                      - dev
+                      - test
+                      appContainers:
+                      - springboot
+                      - vue
+                      - mongo
+                      testLibraries:
+                      - junit
+                      - jest
+                    assets:
+                      highLevelDiagram: https://example.com/foobar
         404:
           description: No residency with this ID was found.
     put:
