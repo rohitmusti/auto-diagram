@@ -2,39 +2,26 @@
 openapi: 3.0.0
 info:
   title: Auto Diagram
-  description: Generate project diagrams from information about that project.
+  description: |-
+    Generate diagrams and documentation from information about a residency.
+
+    Note: this data may be periodically deleted. For long-term use, store assets outside of this API in source control, a wiki, etc.
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
   version: 0.1.0
 paths:
-  /diagrams/high-level:
+  /residencies:
     post:
-      summary: Create a new diagram from the supplied parameters.
+      summary: Create a new residency object from the supplied parameters.
+      description: If the request succeeds, new assets (diagrams, etc.) will be created.
+        This data may be periodically deleted. For long-term use, store assets outside
+        of this API in source control, a wiki, etc.
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/stack'
-            examples:
-              Example stack:
-                value:
-                  organization: ABC Corp
-                  hosting: aws
-                  sourceControl: github
-                  collaborationTools:
-                  - slack
-                  - jira
-                  environments:
-                  - dev
-                  - test
-                  appContainers:
-                  - springboot
-                  - vue
-                  - mongo
-                  testLibraries:
-                  - junit
-                  - jest
+              $ref: '#/components/schemas/residency'
         required: true
       responses:
         200:
@@ -45,6 +32,74 @@ paths:
           description: The diagram parameters were not valid or were not supplied.
           content:
             application/json: {}
+  /residencies/{id}:
+    get:
+      summary: Returns all data associated with this residency.
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/residency'
+        404:
+          description: No residency with this ID was found.
+    put:
+      summary: Update the data for a residency
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/residency'
+        required: true
+      responses:
+        200:
+          description: Residency assets successfully created. Response will include
+            the "assets" property in the residency object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/residency'
+        400:
+          description: No valid residency was supplied.
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  /residencies/{id}/assets/high-level-diagram/:
+    get:
+      summary: Returns a high-level diagram.
+      responses:
+        200:
+          content:
+            image/png: {}
+        404:
+          description: No residency with this ID was found, or the residency did not
+            have this asset.
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  /residencies/{id}/assets/:
+    get:
+      summary: Returns all assets associated with this residency.
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/residency'
+        404:
+          description: No residency with this ID was found.
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
 components:
   schemas:
     stack:
@@ -58,8 +113,6 @@ components:
       - testLibraries
       type: object
       properties:
-        organization:
-          type: string
         hosting:
           type: string
         sourceControl:
@@ -80,3 +133,37 @@ components:
           type: array
           items:
             type: string
+    assetCollection:
+      properties:
+        highLevelDiagram:
+          $ref: '#/components/schemas/asset'
+    asset:
+      required:
+      - url
+      properties:
+        url:
+          type: string
+        type:
+          description: 'May be one of: "diagram", "document"'
+          type: string
+    residency:
+      required:
+      - metadata
+      - stack
+      properties:
+        assets:
+          $ref: '#/components/schemas/assetCollection'
+        metadata:
+          $ref: '#/components/schemas/metadata'
+        stack:
+          $ref: '#/components/schemas/stack'
+    metadata:
+      properties:
+        customerName:
+          type: string
+        start:
+          format: date
+          type: string
+        end:
+          format: date
+          type: string
