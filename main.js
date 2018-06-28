@@ -1,18 +1,27 @@
-Vue.component('infrastructure', {
+// {
+//   "organization": ["ABC Corp"],
+//   "sourceControl": ["github"],
+//   "collaborationTools": ["slack","jira"],
+//   "appContainers": ["springboot", "vue", "mongo"],
+//   "testLibraries": ["junit", "jest"]
+// }
+
+
+Vue.component('foundation-tag', {
 	props: ['struct'],
-	template: '<div class="foundations">{{ struct.text }}</div>'
+	template: '<div class="foundations">{{ struct }}</div>'
 })
 
-var app1 = new Vue({
-	el: '#app-1',
+var foundations = new Vue({
+	el: '#foundations-app',
 	data: {
 		list: []
 	},
 	mounted(){
-		var temp = this;
-		axios.get('example.json')
+		var vueScope = this;
+		axios.get('example1.json')
 		.then(function (response) {
-			temp.list = response.data;
+			vueScope.list = response.data.hosting;
 		})
 		.catch(function (error) {
 			console.log(error);
@@ -20,9 +29,25 @@ var app1 = new Vue({
 	}
 })
 
-var app2 = new Vue({
-	el: '#app-2',
+
+Vue.component('environment-tag', {
+	props: ['struct'],
+	template: '<div class="floors">{{ struct }}</div>'
+})
+
+var environment = new Vue({
+	el: '#environment-app',
 	data: {
-		message: 'You loaded this page on' + new Date().toLocaleString()
+		list: []
+	},
+	mounted(){
+		var vueScope = this;
+		axios.get('example1.json')
+		.then(function (response) {
+			vueScope.list = response.data.environments;
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
 	}
 })
