@@ -16,10 +16,17 @@ export default {
     HelloWorld
   },
 
+  data(){
+    return{
+      list: []
+    }
+  },
+
   mounted(){
+    var vueScope = this;
     axios.get('/example1.json')
     .then(function (response) {
-      console.log(response)
+      vueScope.list = response.data;
     })
     .catch(function (error) {
       console.log(error);
