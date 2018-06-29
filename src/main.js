@@ -5,4 +5,4 @@ Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app') //Mount the app component to the view controller
