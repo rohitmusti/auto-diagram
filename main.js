@@ -4,6 +4,17 @@
 //   "testLibraries": ["junit", "jest"]
 // }
 
+var diagramData;
+
+axios.get('example1.json')
+.then(function (response) {
+	diagramData = response.ada
+	console.log(diagramData);
+})
+.catch(function (error) {
+	console.log(error);
+});
+
 
 Vue.component('foundation-tag', {
 	props: ['struct'],
@@ -29,8 +40,11 @@ var foundations = new Vue({
 
 
 Vue.component('environment-tag', {
-	props: ['struct'],
-	template: '<div class="floors">{{ struct }}</div>'
+	props: ['floor-struct', 'container-struct'],
+	template: '<div class="floors">{{ floor-struct }} <container-tag v-bind:struct="container-struct>" </div>'
+	components: {
+		'containers' : appContainers
+	}
 })
 
 
