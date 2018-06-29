@@ -2,7 +2,7 @@
 Creating a layer of automation for diagram creation
 
 # resources
-https://learnlayout.com\
-https://vuesjs.org/v2/guide/index.html\
-https://github.com/axios/axios\
-https://www.npmjs.com/package/live-server\
+https://learnlayout.com <br />
+https://vuesjs.org/v2/guide/index.html <br />
+https://github.com/axios/axios <br />
+https://www.npmjs.com/package/live-server <br />
