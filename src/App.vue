@@ -2,18 +2,37 @@
   <div id="app">
     <img src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-container></app-container>
+    <app-collaboration></app-collaboration>
+    <app-environment></app-environment>
+    <app-foundation></app-foundation>
+    <app-source></app-source>
+
+
   </div>
+
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import AppContainer from './components/AppContainer.vue'
+import Collaboration from './components/Collaboration.vue'
+import Environment from './components/Environment.vue'
+import Foundation from './components/Foundation.vue'
+import Source from './components/Source.vue'
+
 import axios from 'axios';
 
 export default {
   name: 'app',
 
   components: {
-    HelloWorld
+    HelloWorld,
+    'app-container' : AppContainer,
+    'app-collaboration' : Collaboration,
+    'app-environment' : Environment,
+    'app-foundation' : Foundation,
+    'app-source' : Source
   },
 
   data(){
