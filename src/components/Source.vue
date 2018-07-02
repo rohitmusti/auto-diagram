@@ -1,13 +1,12 @@
 <template>
   <div>
-      <h1>Message from Source</h1>
-      <p>{{ sourceControls }}</p>
+      <p>{{ struct }}</p>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['sourceControls'],
+    props: ['struct'],
     name: 'app-source',
     data () {
       return {}

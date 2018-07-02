@@ -1,7 +1,10 @@
 <template>
   <div>
-      <h1>Message from Environment</h1>
-      <p>{{ environments }}</p>
+      <h2>{{ struct }}</h2>
+      <app-container
+        v-for="item in applications"
+        v-bind:substruct="item">
+      </app-container>
   </div>
 </template>
 
@@ -9,7 +12,7 @@
 import AppContainer from './AppContainer.vue'
 
   export default {
-    props: ['environments'],
+    props: ['struct', 'applications'],
     name: 'app-environment',
     components: {
       "app-container" : AppContainer

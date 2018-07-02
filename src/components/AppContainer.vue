@@ -1,11 +1,14 @@
 <template>
   <div>
-      <h1>Message from AppContainer</h1>
+    <p> {{substruct}} </p>
   </div>
 </template>
 
 <script>
-  export default {}
+  export default {
+    props:['substruct'],
+    name: "app-container"
+  }
 </script>
 
 <style scoped>

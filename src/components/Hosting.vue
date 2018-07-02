@@ -1,13 +1,13 @@
 <template>
   <div>
-      <p> {{struct}} </p>
+      <p>{{ struct }}</p>
   </div>
 </template>
 
 <script>
   export default {
     props: ['struct'],
-    name: 'app-collaboration',
+    name: 'app-hosting',
     data () {
       return {}
     }

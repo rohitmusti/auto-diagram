@@ -1,10 +1,49 @@
 <template>
+  <!-- <div id="collaboration-app">
+    <collaboration-tag
+      v-for="item in list"
+      v-bind:struct="item"
+      v-bind:key="item.id">
+    </collaboration-tag>
+  </div> -->
+
   <div id="app">
-    <img src="./assets/logo.png">
-    <app-collaboration :collaborationTools="collab_list"></app-collaboration>
-    <app-environment :environments="env_list"></app-environment>
-    <app-foundation :foundations="found_list"></app-foundation>
-    <app-source :sourceControls="source_list"></app-source>
+    <img src="./assets/rhlabs.png">
+
+    <h1>Orgainization</h1>
+    <p>{{ input_data.organization[0] }}</p>
+
+    <h1>Collaborations</h1>
+    <app-collaboration
+      v-for="item in input_data.collaborationTools"
+      v-bind:struct="item">
+    </app-collaboration>
+
+    <h1>Environments</h1>
+    <app-environment :applications="input_data.appContainers"
+      v-for="item in input_data.environments"
+      v-bind:struct="item">
+    </app-environment>
+
+    <h1>Hosting</h1>
+    <app-hosting
+      v-for="item in input_data.hosting"
+      v-bind:struct="item">
+    </app-hosting>
+
+    <h1>Source</h1>
+    <app-source
+      v-for="item in input_data.sourceControl"
+      v-bind:struct="item">
+    </app-source>
+
+    <h1>Testing</h1>
+    <app-test
+      v-for="item in input_data.testLibraries"
+      v-bind:struct="item">
+    </app-test>
+
+
 
 
   </div>
@@ -14,8 +53,10 @@
 <script>
 import Collaboration from './components/Collaboration.vue'
 import Environment from './components/Environment.vue'
-import Foundation from './components/Foundation.vue'
+import Hosting from './components/Hosting.vue'
 import Source from './components/Source.vue'
+import Test from './components/Test.vue'
+
 
 import axios from 'axios';
 
@@ -25,17 +66,14 @@ export default {
   components: {
     'app-collaboration' : Collaboration,
     'app-environment' : Environment,
-    'app-foundation' : Foundation,
-    'app-source' : Source
+    'app-hosting' : Hosting,
+    'app-source' : Source,
+    'app-test': Test
   },
 
   data(){
     return{
-      list: [],
-      collab_list: [],
-      env_list: [],
-      found_list: [],
-      source_list: []
+      input_data: [],
     }
   },
 
@@ -43,13 +81,7 @@ export default {
     var vueScope = this;
     axios.get('/example1.json')
     .then(function (response) {
-      vueScope.list = response.data;
-      vueScope.collab_list = response.data.collaborationTools;
-      vueScope.env_list = response.data.environments;
-      vueScope.found_list = response.data.hosting;
-      vueScope.source_list = response.data.sourceControl;
-
-
+      vueScope.input_data = response.data;
     })
     .catch(function (error) {
       console.log(error);

@@ -1,14 +1,13 @@
 <template>
   <div>
-      <h1>Message from Foundation</h1>
-      <p>{{ foundations }}</p>
+      <p>{{ struct }}</p>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['foundations'],
-    name: 'app-foundation',
+    props: ['struct'],
+    name: 'app-test',
     data () {
       return {}
     }
