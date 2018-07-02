@@ -1,12 +1,10 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <app-container></app-container>
-    <app-collaboration></app-collaboration>
-    <app-environment></app-environment>
-    <app-foundation></app-foundation>
-    <app-source></app-source>
+    <app-collaboration :collaborationTools="collab_list"></app-collaboration>
+    <app-environment :environments="env_list"></app-environment>
+    <app-foundation :foundations="found_list"></app-foundation>
+    <app-source :sourceControls="source_list"></app-source>
 
 
   </div>
@@ -14,8 +12,6 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import AppContainer from './components/AppContainer.vue'
 import Collaboration from './components/Collaboration.vue'
 import Environment from './components/Environment.vue'
 import Foundation from './components/Foundation.vue'
@@ -27,8 +23,6 @@ export default {
   name: 'app',
 
   components: {
-    HelloWorld,
-    'app-container' : AppContainer,
     'app-collaboration' : Collaboration,
     'app-environment' : Environment,
     'app-foundation' : Foundation,
@@ -37,7 +31,11 @@ export default {
 
   data(){
     return{
-      list: []
+      list: [],
+      collab_list: [],
+      env_list: [],
+      found_list: [],
+      source_list: []
     }
   },
 
@@ -46,6 +44,12 @@ export default {
     axios.get('/example1.json')
     .then(function (response) {
       vueScope.list = response.data;
+      vueScope.collab_list = response.data.collaborationTools;
+      vueScope.env_list = response.data.environments;
+      vueScope.found_list = response.data.hosting;
+      vueScope.source_list = response.data.sourceControl;
+
+
     })
     .catch(function (error) {
       console.log(error);
