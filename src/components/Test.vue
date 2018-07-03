@@ -16,4 +16,8 @@
 
 <style scoped>
 
+.test {
+    background-color: #a29bfe;
+    margin: 5px;
+}
 </style>

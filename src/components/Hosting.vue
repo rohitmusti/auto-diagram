@@ -15,5 +15,11 @@
 </script>
 
 <style scoped>
+.host {
+    background-color: #ff7675;
+    margin: 5px;
+    padding: 3px;
+
+}
 
 </style>

@@ -24,5 +24,10 @@ import AppContainer from './AppContainer.vue'
 </script>
 
 <style scoped>
-
+.environment {
+    background-color: #81ecec;
+    margin: 5px;
+    display: grid;
+    grid-row: repeat(3, 1fr);
+}
 </style>
