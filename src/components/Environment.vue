@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="environment">
       <h2>{{ struct }}</h2>
       <app-container
         v-for="item in applications"

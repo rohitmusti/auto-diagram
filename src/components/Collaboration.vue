@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="collaboration">
       <p> {{struct}} </p>
   </div>
 </template>

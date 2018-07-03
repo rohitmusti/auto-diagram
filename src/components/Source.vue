@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="source">
       <p>{{ struct }}</p>
   </div>
 </template>
