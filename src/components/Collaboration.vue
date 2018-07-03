@@ -18,6 +18,5 @@
 .collaboration {
     margin: 5px;
     background-color: #55efc4;
-
 }
 </style>
