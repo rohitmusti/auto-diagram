@@ -13,7 +13,7 @@
       </div>
     <div class="organization-wrapper">
         <div class="organization">
-            <p>{{ input_data.organization[0] }}</p>
+            <p>{{ organization }}</p>
         </div>
     </div>
 
@@ -83,6 +83,7 @@ export default {
   data(){
     return{
       input_data: [],
+      organization: ""
     }
   },
 
@@ -91,6 +92,7 @@ export default {
     axios.get('/example.json')
     .then(function (response) {
       vueScope.input_data = response.data;
+      vueScope.organization = response.data.organization[0];
     })
     .catch(function (error) {
       console.log(error);
