@@ -1,6 +1,6 @@
 <template>
   <div class="collaboration">
-      <p> {{struct}} </p>
+      {{struct}}
   </div>
 </template>
 

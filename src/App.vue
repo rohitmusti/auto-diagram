@@ -8,39 +8,43 @@
   </div> -->
 
   <div id="app">
-    <img src="./assets/rhlabs.png">
-    <div class="organization">
-        <!-- <h1>Organization</h1> -->
-        <p>{{ input_data.organization[0] }}</p>
+      <div class="logo">
+          <img src="./assets/rhlabs.png">
+      </div>
+    <div class="organization-wrapper">
+        <div class="organization">
+            <p>{{ input_data.organization[0] }}</p>
+        </div>
     </div>
 
-    <!-- <h1>Collaborations</h1> -->
-    <app-collaboration
-      v-for="item in input_data.collaborationTools"
-      v-bind:struct="item">
-    </app-collaboration>
+    <div class="collaboration-wrapper">
+        <app-collaboration
+          v-for="item in input_data.collaborationTools"
+          v-bind:struct="item">
+        </app-collaboration>
+    </div>
 
-    <!-- <h1>Environments</h1> -->
-    <app-environment :applications="input_data.appContainers"
-      v-for="item in input_data.environments"
-      v-bind:struct="item">
-    </app-environment>
+    <div class="environment-wrapper">
+        <app-environment :applications="input_data.appContainers"
+          v-for="item in input_data.environments"
+          v-bind:struct="item">
+        </app-environment>
+    </div>
 
+    <div class="source-wrapper">
+        <app-source
+          v-for="item in input_data.sourceControl"
+          v-bind:struct="item">
+        </app-source>
+    </div>
 
+    <div class="test-wrapper">
+        <app-test
+          v-for="item in input_data.testLibraries"
+          v-bind:struct="item">
+        </app-test>
+    </div>
 
-    <!-- <h1>Source</h1> -->
-    <app-source
-      v-for="item in input_data.sourceControl"
-      v-bind:struct="item">
-    </app-source>
-
-    <!-- <h1>Testing</h1> -->
-    <app-test
-      v-for="item in input_data.testLibraries"
-      v-bind:struct="item">
-    </app-test>
-
-    <!-- <h1>Hosting</h1> -->
     <div class="hosting-wrapper">
         <app-hosting
           v-for="item in input_data.hosting"
@@ -84,7 +88,7 @@ export default {
 
   mounted(){
     var vueScope = this;
-    axios.get('/example1.json')
+    axios.get('/example.json')
     .then(function (response) {
       vueScope.input_data = response.data;
     })

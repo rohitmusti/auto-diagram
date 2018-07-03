@@ -1,9 +1,10 @@
 #app {
     display: grid;
     grid-template-columns: repeat( 5, 1fr);
-    grid-template-rows: repeat( 6, 1fr);
+    grid-template-rows: repeat( 7, 1fr);
     grid-gap: 10px;
     grid-template-areas:
+    "l o o o o"
     "t e e e e"
     "t e e e e"
     "t e e e e"
@@ -13,6 +14,21 @@
 
 * {
     padding: 5px;
+}
+
+.organization-wrapper {
+    background-color: #d63031;
+    grid-area: o;
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-row: 1fr;
+}
+
+.organization {
+    background-color: #ff7675;
+    margin: 5px;
+    padding: 3px;
+
 }
 
 .hosting-wrapper {
