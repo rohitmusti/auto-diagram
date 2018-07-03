@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <p>{{ struct }}</p>
+  <div class="test">
+      {{ struct }}
   </div>
 </template>
 

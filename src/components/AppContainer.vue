@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <p> {{substruct}} </p>
+  <div class="container">
+    {{substruct}}
   </div>
 </template>
 
