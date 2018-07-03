@@ -1,0 +1,86 @@
+#app {
+    display: grid;
+    grid-template-columns: repeat( 5, 1fr);
+    grid-template-rows: repeat( 6, 1fr);
+    grid-gap: 10px;
+    grid-template-areas:
+    "t e e e e"
+    "t e e e e"
+    "t e e e e"
+    "s s s s c"
+    "h h h h h";
+}
+
+* {
+    padding: 5px;
+}
+
+.hosting-wrapper {
+    background-color: #d63031;
+    grid-area: h;
+    display: grid;
+    grid-row: repeat(2, 1fr);
+}
+
+.host {
+    background-color: #ff7675;
+    margin: 5px;
+    padding: 3px;
+
+}
+
+.environment-wrapper {
+    grid-area: e;
+    display: grid;
+    grid-row: repeat(3, 1fr);
+}
+
+.environment {
+    background-color: #81ecec;
+    margin: 5px;
+    display: grid;
+    grid-row: repeat(3, 1fr);
+}
+
+.container {
+    background-color: #0984e3;
+    margin: 5px;
+
+}
+
+.collaboration-wrapper {
+    background-color: #00b894;
+    grid-area: c;
+    display: grid;
+    grid-row: repeat(2, 1fr);
+}
+
+.collaboration {
+    margin: 5px;
+    background-color: #55efc4;
+
+}
+
+.test-wrapper {
+    background-color: #6c5ce7;
+    grid-area: t;
+    display: grid;
+    grid-row: repeat(2, 1fr);
+
+}
+
+.test {
+    background-color: #a29bfe;
+    margin: 5px;
+}
+
+.source-wrapper {
+    background-color: #fdcb6e;
+    grid-area: s;
+    display: grid;
+    grid-row: repeat(1, 1fr);
+}
+
+.source {
+    background-color: #ffeaa7;
+}

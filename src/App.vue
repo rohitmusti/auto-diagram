@@ -9,39 +9,44 @@
 
   <div id="app">
     <img src="./assets/rhlabs.png">
+    <div class="organization">
+        <!-- <h1>Organization</h1> -->
+        <p>{{ input_data.organization[0] }}</p>
+    </div>
 
-    <h1>Orgainization</h1>
-    <p>{{ input_data.organization[0] }}</p>
-
-    <h1>Collaborations</h1>
+    <!-- <h1>Collaborations</h1> -->
     <app-collaboration
       v-for="item in input_data.collaborationTools"
       v-bind:struct="item">
     </app-collaboration>
 
-    <h1>Environments</h1>
+    <!-- <h1>Environments</h1> -->
     <app-environment :applications="input_data.appContainers"
       v-for="item in input_data.environments"
       v-bind:struct="item">
     </app-environment>
 
-    <h1>Hosting</h1>
-    <app-hosting
-      v-for="item in input_data.hosting"
-      v-bind:struct="item">
-    </app-hosting>
 
-    <h1>Source</h1>
+
+    <!-- <h1>Source</h1> -->
     <app-source
       v-for="item in input_data.sourceControl"
       v-bind:struct="item">
     </app-source>
 
-    <h1>Testing</h1>
+    <!-- <h1>Testing</h1> -->
     <app-test
       v-for="item in input_data.testLibraries"
       v-bind:struct="item">
     </app-test>
+
+    <!-- <h1>Hosting</h1> -->
+    <div class="hosting-wrapper">
+        <app-hosting
+          v-for="item in input_data.hosting"
+          v-bind:struct="item">
+        </app-hosting>
+    </div>
 
 
 

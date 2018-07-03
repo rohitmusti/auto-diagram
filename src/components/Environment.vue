@@ -1,6 +1,6 @@
 <template>
   <div class="environment">
-      <h2>{{ struct }}</h2>
+      {{ struct }}
       <app-container
         v-for="item in applications"
         v-bind:substruct="item">
