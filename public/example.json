@@ -1,5 +1,5 @@
 {
-  "organization": ["ABC Corp"],
+  "organization": ["RedHat Corp"],
   "hosting": ["openshift", "aws"],
   "sourceControl": ["github"],
   "collaborationTools": ["slack","jira"],

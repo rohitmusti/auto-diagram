@@ -11,7 +11,7 @@
         "icon": "openstack"
       },
       {
-        "name": "Aamazon Web Services",
+        "name": "Amazon Web Services",
         "icon": "aws"
       }
     ],
@@ -32,11 +32,12 @@
       }
     ],
     "environments": [
-      {
-        "name": "Development"
-      },
+
       {
         "name": "Test"
+      },
+      {
+        "name": "Development"
       }
     ],
     "appContainers": [

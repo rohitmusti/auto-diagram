@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    {{substruct}}
+    {{substruct.name}}
   </div>
 </template>
 

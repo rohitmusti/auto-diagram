@@ -19,35 +19,35 @@
 
     <div class="collaboration-wrapper">
         <app-collaboration
-          v-for="item in input_data.collaborationTools"
+          v-for="item in input_data.stack.collaborationTools"
           v-bind:struct="item">
         </app-collaboration>
     </div>
 
     <div class="environment-wrapper">
-        <app-environment :applications="input_data.appContainers"
-          v-for="item in input_data.environments"
+        <app-environment :applications="input_data.stack.appContainers"
+          v-for="item in input_data.stack.environments"
           v-bind:struct="item">
         </app-environment>
     </div>
 
     <div class="source-wrapper">
         <app-source
-          v-for="item in input_data.sourceControl"
+          v-for="item in input_data.stack.sourceControl"
           v-bind:struct="item">
         </app-source>
     </div>
 
     <div class="test-wrapper">
         <app-test
-          v-for="item in input_data.testLibraries"
+          v-for="item in input_data.stack.testLibraries"
           v-bind:struct="item">
         </app-test>
     </div>
 
     <div class="hosting-wrapper">
         <app-hosting
-          v-for="item in input_data.hosting"
+          v-for="item in input_data.stack.hosting"
           v-bind:struct="item">
         </app-hosting>
     </div>
@@ -89,10 +89,10 @@ export default {
 
   mounted(){
     var vueScope = this;
-    axios.get('/example.json')
+    axios.get('/example-api.json')
     .then(function (response) {
       vueScope.input_data = response.data;
-      vueScope.organization = response.data.organization[0];
+      vueScope.organization = response.data.metadata.customerName;
     })
     .catch(function (error) {
       console.log(error);

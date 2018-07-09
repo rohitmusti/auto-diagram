@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-      {{ struct }}
+      {{ struct.name }}
   </div>
 </template>
 
