@@ -1,7 +1,5 @@
 <template>
-  <div class="host">
-      <i> {{struct.name}} </i>
-  </div>
+      <i class="host"> <span>{{struct.name}}</span> </i>
 
 </template>
 

@@ -1,8 +1,5 @@
 <template>
-  <div class="container">
-      <i> {{substruct.name}} </i>
-
-  </div>
+      <i class="container"> <span>{{substruct.name}}</span></i>
 </template>
 
 <script>

@@ -8,27 +8,31 @@
     "hosting": [
       {
         "name": "openStack",
-        "icon": "openstack"
+        "icon": "fas fa-server"
       },
       {
         "name": "Amazon Web Services",
-        "icon": "aws"
+        "icon": "fab fa-aws"
       }
     ],
     "sourceControl": [
       {
         "name": "GitHub",
-        "icon": "github"
-      }
+        "icon": "fab fa-github"
+    },
+    {
+      "name": "Gitlab",
+      "icon": "fab fa-gitlab"
+    }
     ],
     "collaborationTools": [
       {
         "name": "Slack",
-        "icon": "slack"
+        "icon": "fab fa-slack"
       },
       {
         "name": "Jira",
-        "icon": "jira"
+        "icon": "fas fa-project-diagram"
       }
     ],
     "environments": [
@@ -49,36 +53,24 @@
     "appContainers": [
       {
         "name": "Spring Boot",
-        "icon": "springboot"
+        "icon": "fas fa-th"
       },
       {
         "name": "Mongo",
-        "icon": "mongodb"
+        "icon": "fas fa-database"
       },
       {
         "name": "Vue",
-        "icon": "vuejs"
+        "icon": "fab fa-vuejs"
       }
     ],
     "testLibraries": [
       {
         "name": "Jest",
-        "icon": "jest"
-      },
-      {
-        "name": "Producer",
-        "icon": "jest"
-      },
-      {
-        "name": "Test",
-        "icon": "jest"
-      },{
-        "name": "Test01",
-        "icon": "jest"
-      },
-      {
+        "icon": "fas fa-microchip"
+      },  {
         "name": "JUnit",
-        "icon": "junit"
+        "icon": "fas fa-microchip"
       }
     ]
   },

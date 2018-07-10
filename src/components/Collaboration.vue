@@ -1,7 +1,5 @@
 <template>
-  <div class="collaboration">
-      <i> {{ struct.name }}</i>
-  </div>
+      <i class="collaboration"> <span>{{ struct.name }}</span> </i>
 </template>
 
 <script>
@@ -19,4 +17,5 @@
     margin: 5px;
     background-color: #55efc4;
 }
+
 </style>

@@ -19,7 +19,7 @@
 
     <div class="collaboration-wrapper">
         <app-collaboration
-          v-for="item in input_data.stack.collaborationTools" :class="'devicon-'+ item.icon + '-original'"
+          v-for="item in input_data.stack.collaborationTools" :class="item.icon"
           v-bind:struct="item">
         </app-collaboration>
     </div>
@@ -33,21 +33,21 @@
 
     <div class="source-wrapper">
         <app-source
-          v-for="item in input_data.stack.sourceControl" :class="'fab fa-'+ item.icon"
+          v-for="item in input_data.stack.sourceControl" :class="item.icon"
           v-bind:struct="item">
         </app-source>
     </div>
 
     <div class="test-wrapper">
         <app-test
-          v-for="item in input_data.stack.testLibraries" :class="'fab fa-'+ item.icon"
+          v-for="item in input_data.stack.testLibraries" :class="item.icon"
           v-bind:struct="item">
         </app-test>
     </div>
 
     <div class="hosting-wrapper">
         <app-hosting
-          v-for="item in input_data.stack.hosting" :class="'fab fa-'+ item.icon"
+          v-for="item in input_data.stack.hosting" :class="item.icon"
           v-bind:struct="item">
         </app-hosting>
     </div>
@@ -106,11 +106,16 @@ export default {
     display: grid;
     grid-template-columns: [logo-start test-start source-start hosting-start] 1fr [logo-end test-end organization-start environment-start] 1fr 1fr 1fr [source-end collaboration-start] 1fr [organization-end environment-end collaboration-end hosting-end];
     grid-template-rows: [logo-start organization-start] auto [logo-end organization-end test-start environment-start] auto auto auto [test-end environment-end collaboration-start source-start] auto [collaboration-end source-end hosting-start] auto [hosting-end];
-    grid-gap: 10px;
+    grid-gap: 5px;
 }
 
 * {
     padding: 5px;
+}
+
+
+span {
+    font-weight: normal;
 }
 
 .organization-wrapper {

@@ -2,7 +2,7 @@
   <div class="environment">
       {{ struct.name }}
       <app-container
-        v-for="item in applications" :class="'devicon-'+ item.icon +'-plain'"
+        v-for="item in applications" :class="item.icon"
         v-bind:substruct="item">
       </app-container>
   </div>
