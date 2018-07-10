@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="content-box-source">
-        <div class="source-wrapper"> 
+        <div class="source-wrapper">
             <div class="box-heading"> <h2>SOURCE CONTROL</h2> </div>
             <app-source
               v-for="item in input_data.stack.sourceControl" :class="item.icon"
@@ -128,7 +128,7 @@ html {
 /*    grid-template-columns: [logo-start test-start source-start hosting-start] 1fr [logo-end test-end organization-start environment-start] 1fr 1fr 1fr [source-end collaboration-start] 1fr [organization-end environment-end collaboration-end hosting-end];
     grid-template-rows: [logo-start organization-start] auto [logo-end organization-end test-start environment-start] auto auto auto [test-end environment-end collaboration-start source-start] auto [collaboration-end source-end hosting-start] auto [hosting-end];*/
     grid-template-columns: [test-start source-start hosting-start] auto [test-end environment-start] auto auto auto [source-end collaboration-start] auto [environment-end collaboration-end hosting-end];
-    grid-template-rows: [test-start environment-start] auto auto auto [test-end environment-end collaboration-start source-start] auto [collaboration-end source-end hosting-start] auto [hosting-end];
+    grid-template-rows: [test-start environment-start] auto auto auto [test-end environment-end collaboration-start source-start] auto [collaboration-end source-end hosting-start] auto [hosting-end] 25px;
     grid-gap: 5px;
 }
 
