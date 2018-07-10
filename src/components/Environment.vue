@@ -1,6 +1,6 @@
 <template>
   <div class="environment">
-      {{ struct.name }}
+      <strong>{{ struct.name }}</strong>
       <app-container
         v-for="item in applications" :class="item.icon"
         v-bind:substruct="item">
@@ -25,9 +25,14 @@ import AppContainer from './AppContainer.vue'
 
 <style scoped>
 .environment {
-    background-color: #81ecec;
+    /* background-color: #81ecec; */
     margin: 5px;
     display: grid;
-    grid-row: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 2px solid #d8dcdd;
+}
+
+.environment:last-child {
+    border-bottom: none;
 }
 </style>

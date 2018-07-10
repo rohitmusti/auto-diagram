@@ -14,6 +14,11 @@
 
 <style scoped>
 .source {
-    background-color: #ffeaa7;
+    border-bottom: 2px solid #d8dcdd;
+    /* background-color: #ffeaa7; */
+}
+
+.source:last-child {
+    border-bottom: none;
 }
 </style>

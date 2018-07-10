@@ -1,6 +1,5 @@
 <template>
       <i class="host"> <span>{{struct.name}}</span> </i>
-
 </template>
 
 <script>
@@ -15,10 +14,13 @@
 
 <style scoped>
 .host {
-    background-color: #ff7675;
     margin: 5px;
     padding: 3px;
+    border-bottom: 2px solid #d8dcdd;
+}
 
+.host {
+    border-bottom: none;
 }
 
 </style>

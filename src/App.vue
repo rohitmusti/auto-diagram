@@ -13,43 +13,56 @@
       </div>
     <div class="organization-wrapper">
         <div class="organization">
+	<div class="box-heading"> <h2>ORGANIZATION</h2> </div>
             <p>{{ organization }}</p>
         </div>
     </div>
-
-    <div class="collaboration-wrapper">
-        <app-collaboration
-          v-for="item in input_data.stack.collaborationTools" :class="item.icon"
-          v-bind:struct="item">
-        </app-collaboration>
+    <div class="content-box-collaboration">
+        <div class="collaboration-wrapper">
+            <div class="box-heading"> <h2>COLLABORATION</h2> </div>
+            <app-collaboration
+              v-for="item in input_data.stack.collaborationTools" :class="item.icon"
+              v-bind:struct="item">
+            </app-collaboration>
+        </div>
+    </div>
+    <div class="content-box-environment">
+        <div class="environment-wrapper">
+            <div class="box-heading"> <h2>ENVIRONMENT</h2> </div>
+            <app-environment :applications="input_data.stack.appContainers"
+              v-for="item in input_data.stack.environments"
+              v-bind:struct="item">
+            </app-environment>
+        </div>
+    </div>
+    <div class="content-box-source">
+        <div class="source-wrapper"> 
+            <div class="box-heading"> <h2>SOURCE CONTROL</h2> </div>
+            <app-source
+              v-for="item in input_data.stack.sourceControl" :class="item.icon"
+              v-bind:struct="item">
+            </app-source>
+        </div>
     </div>
 
-    <div class="environment-wrapper">
-        <app-environment :applications="input_data.stack.appContainers"
-          v-for="item in input_data.stack.environments"
-          v-bind:struct="item">
-        </app-environment>
+    <div class="content-box-test">
+	<div class="box-heading"><h2>PIPELINE</h2></div>
+        <div class="test-wrapper">
+            <app-test
+              v-for="item in input_data.stack.testLibraries" :class="item.icon"
+              v-bind:struct="item">
+            </app-test>
+        </div>
     </div>
 
-    <div class="source-wrapper">
-        <app-source
-          v-for="item in input_data.stack.sourceControl" :class="item.icon"
-          v-bind:struct="item">
-        </app-source>
-    </div>
-
-    <div class="test-wrapper">
-        <app-test
-          v-for="item in input_data.stack.testLibraries" :class="item.icon"
-          v-bind:struct="item">
-        </app-test>
-    </div>
-
-    <div class="hosting-wrapper">
-        <app-hosting
-          v-for="item in input_data.stack.hosting" :class="item.icon"
-          v-bind:struct="item">
-        </app-hosting>
+    <div class="content-box-hosting">
+	<div class="box-heading"><h2>HOSTING</h2></div>
+        <div class="hosting-wrapper">
+            <app-hosting
+              v-for="item in input_data.stack.hosting" :class="item.icon"
+              v-bind:struct="item">
+            </app-hosting>
+        </div>
     </div>
 
 
@@ -102,6 +115,11 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Overpass');
+html {
+    font-family: Overpass;
+}
+
 #app {
     display: grid;
     grid-template-columns: [logo-start test-start source-start hosting-start] 1fr [logo-end test-end organization-start environment-start] 1fr 1fr 1fr [source-end collaboration-start] 1fr [organization-end environment-end collaboration-end hosting-end];
@@ -113,13 +131,24 @@ export default {
     padding: 5px;
 }
 
-
 span {
     font-weight: normal;
 }
 
+.box-heading {
+    text-align: center;
+    background: #bc202a;
+    color: #fff;
+    margin: 0px;
+}
+
+.logo > img {
+    grid-area: logo;
+    width: auto;
+    height: auto;
+}
+
 .organization-wrapper {
-    background-color: #d63031;
     grid-area: organization;
     display: grid;
     grid-column: 1fr 1fr;
@@ -127,44 +156,53 @@ span {
 }
 
 .organization {
-    background-color: #ff7675;
-    margin: 5px;
+    border: 10px solid #d8dcdd;
     padding: 3px;
 
 }
 
-.hosting-wrapper {
-    background-color: #d63031;
+.content-box-hosting {
+    border: 10px solid #d8dcdd;
     grid-area: hosting;
+}
+.hosting-wrapper {
     display: grid;
     grid-row: repeat(2, 1fr);
 }
 
 
-.environment-wrapper {
+.content-box-environment{
+    border: 10px solid #d8dcdd;
     grid-area: environment;
+
+}
+.environment-wrapper {
     display: grid;
     grid-row: repeat(3, 1fr);
 }
 
 .collaboration-wrapper {
-    background-color: #00b894;
+    border: 10px solid #d8dcdd;
     grid-area: collaboration;
     display: grid;
     grid-row: repeat(2, 1fr);
 }
 
-.test-wrapper {
-    background-color: #6c5ce7;
+.content-box-test{
+    border: 10px solid #d8dcdd;
     grid-area: test;
+}
+.test-wrapper {
     display: grid;
     grid-row: repeat(2, 1fr);
 
 }
 
-.source-wrapper {
-    background-color: #fdcb6e;
+.content-box-source{
+    border: 10px solid #d8dcdd;
     grid-area: source;
+}
+.source-wrapper {
     display: grid;
     grid-row: repeat(1, 1fr);
 }

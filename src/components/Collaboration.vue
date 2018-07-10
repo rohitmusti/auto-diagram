@@ -15,7 +15,12 @@
 <style scoped>
 .collaboration {
     margin: 5px;
-    background-color: #55efc4;
+    /* background-color: #55efc4; */
+    border-bottom: 2px solid #d8dcdd;
+}
+
+.collaboration:last-child {
+    border-bottom: none;
 }
 
 </style>
