@@ -47,7 +47,7 @@
       },
       {
         "name": "Mongo",
-        "icon": "database"
+        "icon": "mongodb"
       },
       {
         "name": "Vue",

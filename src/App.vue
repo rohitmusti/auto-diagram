@@ -19,7 +19,7 @@
 
     <div class="collaboration-wrapper">
         <app-collaboration
-          v-for="item in input_data.stack.collaborationTools" :class="'fab fa-'+ item.icon"
+          v-for="item in input_data.stack.collaborationTools" :class="'devicon-'+ item.icon + '-plain'"
           v-bind:struct="item">
         </app-collaboration>
     </div>
