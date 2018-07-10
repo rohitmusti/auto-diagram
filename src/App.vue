@@ -142,11 +142,6 @@ span {
     margin: 0px;
 }
 
-.logo > img {
-    grid-area: logo;
-    width: auto;
-    height: auto;
-}
 
 .organization-wrapper {
     grid-area: organization;
