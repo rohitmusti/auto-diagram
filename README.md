@@ -16,12 +16,21 @@ We're following the philosophy laid out in [Consumer-Driven Contracts](https://m
 
 The API is versioned using [Semver](https://semver.org/). Backwards-compatible feature updates (e.g., new properties added) are indicated by minor releases. Breaking changes (e.g., an endpoint is renamed or a property is removed) are indicated by major releases.
 
-## Taking Screenshots with Headless Chrome
-For this to run you will need an instance of headless chrome running as well as our express server. This can be accomplished with the following command:
-- `$ node headless_chrome/app.js`
-- `$ google-chrome --headless --remote-debugging-port=9222 --hide-scrollbars`
-These can be run as background processes if you choose to do so. After doing so visit `http://localhost:3000` to view your screenshot in the browser. This will copy an image of your diagram into the directory `headless_chrome`. 
+## Development
+### Modifying the Info-Graphic
+1. Navigate to the root folder.
+2. Run `$ npm install` to install the dependencies.
+3. Modify the Vue components in the `src/` folder.
+4. Run `$ npm run serve` to start the server.
+5. Open `http://localhost:8000/` in your favorite browser to see the Info-Graphic.
+Note: there are two generated links, one local link that is only accessible from your computer and one network link that is available to anyone on your network.
 
+### Taking a screenshot using Headless Chrome
+Note: This requires the headless chrome CLI to be installed. [Getting Started](https://developers.google.com/web/updates/20217/04/headless-chrome).
+For this to run you will need an instance of headless chrome running as well as our express server. This can be accomplished with the following command:
+1. Run `$ node headless_chrome/app.js`.
+2. Run `$ google-chrome --headless --remote-debugging-port=9222 --hide-scrollbars`
+3. Open `http://localhost:3000` to view the screenshot in your browser.
 
 ## Front-end dev resources
 
