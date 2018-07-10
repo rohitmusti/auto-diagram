@@ -38,13 +38,13 @@
     "environments": [
 
       {
+        "name": "Demo"
+      },
+      {
         "name": "Test"
       },
       {
         "name": "Security"
-      },
-      {
-        "name": "Fourth"
       },
       {
         "name": "Development"
