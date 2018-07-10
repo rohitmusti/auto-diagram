@@ -16,6 +16,10 @@ We're following the philosophy laid out in [Consumer-Driven Contracts](https://m
 
 The API is versioned using [Semver](https://semver.org/). Backwards-compatible feature updates (e.g., new properties added) are indicated by minor releases. Breaking changes (e.g., an endpoint is renamed or a property is removed) are indicated by major releases.
 
+## Taking a Screenshot via Headless Chrome
+- $ google-chrome --headless --remote-debugging-port=9222
+- $ node headless_chrome/screenshot.js 
+
 ## Front-end dev resources
 
 - https://learnlayout.com/
