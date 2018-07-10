@@ -1,7 +1,10 @@
 <template>
-  <div class="container">
+  <!-- <div class="container">
+      <i class="fas fa-" + {{substruct.icon}}> </i>
+
     {{substruct.name}}
-  </div>
+  </div> -->
+  <i></i>
 </template>
 
 <script>

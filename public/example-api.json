@@ -51,7 +51,7 @@
       },
       {
         "name": "Vue",
-        "icon": "vue"
+        "icon": "vuejs"
       }
     ],
     "testLibraries": [
