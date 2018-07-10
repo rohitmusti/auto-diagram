@@ -8,7 +8,7 @@
   </div> -->
 
   <div id="app">
-      <div class="logo">
+<!--      <div class="logo">
           <img src="./assets/rhlabs.png">
       </div>
     <div class="organization-wrapper">
@@ -16,7 +16,7 @@
 	<div class="box-heading"> <h2>ORGANIZATION</h2> </div>
             <p>{{ organization }}</p>
         </div>
-    </div>
+    </div> -->
     <div class="content-box-collaboration">
         <div class="collaboration-wrapper">
             <div class="box-heading"> <h2>COLLABORATION</h2> </div>
@@ -64,6 +64,9 @@
             </app-hosting>
         </div>
     </div>
+    <!-- <div class="builder">
+        <img src="./assets/builder.png">
+    </div> -->
 
 
 
@@ -122,9 +125,16 @@ html {
 
 #app {
     display: grid;
-    grid-template-columns: [logo-start test-start source-start hosting-start] 1fr [logo-end test-end organization-start environment-start] 1fr 1fr 1fr [source-end collaboration-start] 1fr [organization-end environment-end collaboration-end hosting-end];
-    grid-template-rows: [logo-start organization-start] auto [logo-end organization-end test-start environment-start] auto auto auto [test-end environment-end collaboration-start source-start] auto [collaboration-end source-end hosting-start] auto [hosting-end];
+/*    grid-template-columns: [logo-start test-start source-start hosting-start] 1fr [logo-end test-end organization-start environment-start] 1fr 1fr 1fr [source-end collaboration-start] 1fr [organization-end environment-end collaboration-end hosting-end];
+    grid-template-rows: [logo-start organization-start] auto [logo-end organization-end test-start environment-start] auto auto auto [test-end environment-end collaboration-start source-start] auto [collaboration-end source-end hosting-start] auto [hosting-end];*/
+    grid-template-columns: [test-start source-start hosting-start] auto [test-end environment-start] auto auto auto [source-end collaboration-start] auto [environment-end collaboration-end hosting-end];
+    grid-template-rows: [test-start environment-start] auto auto auto [test-end environment-end collaboration-start source-start] auto [collaboration-end source-end hosting-start] auto [hosting-end];
     grid-gap: 5px;
+}
+
+h2 {
+
+    margin: 0px;
 }
 
 * {
@@ -136,10 +146,16 @@ span {
 }
 
 .box-heading {
+    margin: 0px;
     text-align: center;
     background: #bc202a;
     color: #fff;
     margin: 0px;
+}
+
+.builder {
+    grid-area: builder;
+    transform: scale(0.25);
 }
 
 
