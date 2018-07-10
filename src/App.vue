@@ -19,7 +19,7 @@
 
     <div class="collaboration-wrapper">
         <app-collaboration
-          v-for="item in input_data.stack.collaborationTools" :class="'devicon-'+ item.icon + '-plain'"
+          v-for="item in input_data.stack.collaborationTools" :class="'devicon-'+ item.icon + '-original'"
           v-bind:struct="item">
         </app-collaboration>
     </div>
@@ -104,16 +104,9 @@ export default {
 <style>
 #app {
     display: grid;
-    grid-template-columns: repeat( 5, 1fr);
-    grid-template-rows: repeat( 7, 1fr);
+    grid-template-columns: [logo-start test-start source-start hosting-start] 1fr [logo-end test-end organization-start environment-start] 1fr 1fr 1fr [source-end collaboration-start] 1fr [organization-end environment-end collaboration-end hosting-end];
+    grid-template-rows: [logo-start organization-start] 1fr [logo-end organization-end test-start environment-start] 1fr 1fr 1fr [test-end environment-end collaboration-start source-start] 1fr [collaboration-end source-end hosting-start] 1fr [hosting-end];
     grid-gap: 10px;
-    grid-template-areas:
-    "l o o o o"
-    "t e e e e"
-    "t e e e e"
-    "t e e e e"
-    "s s s s c"
-    "h h h h h";
 }
 
 * {
@@ -122,7 +115,7 @@ export default {
 
 .organization-wrapper {
     background-color: #d63031;
-    grid-area: o;
+    grid-area: organization;
     display: grid;
     grid-column: 1fr 1fr;
     grid-row: 1fr;
@@ -137,28 +130,28 @@ export default {
 
 .hosting-wrapper {
     background-color: #d63031;
-    grid-area: h;
+    grid-area: hosting;
     display: grid;
     grid-row: repeat(2, 1fr);
 }
 
 
 .environment-wrapper {
-    grid-area: e;
+    grid-area: environment;
     display: grid;
     grid-row: repeat(3, 1fr);
 }
 
 .collaboration-wrapper {
     background-color: #00b894;
-    grid-area: c;
+    grid-area: collaboration;
     display: grid;
     grid-row: repeat(2, 1fr);
 }
 
 .test-wrapper {
     background-color: #6c5ce7;
-    grid-area: t;
+    grid-area: test;
     display: grid;
     grid-row: repeat(2, 1fr);
 
@@ -166,7 +159,7 @@ export default {
 
 .source-wrapper {
     background-color: #fdcb6e;
-    grid-area: s;
+    grid-area: source;
     display: grid;
     grid-row: repeat(1, 1fr);
 }
