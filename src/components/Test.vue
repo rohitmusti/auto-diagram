@@ -1,8 +1,7 @@
 <template>
-  <!-- <div class="test">
-      {{ struct.name }}
-  </div> -->
-  <i> {{struct.name}} </i>
+  <div class="test">
+      <i> {{struct.name}} </i>
+  </div>
 
 </template>
 

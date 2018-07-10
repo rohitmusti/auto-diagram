@@ -37,6 +37,12 @@
         "name": "Test"
       },
       {
+        "name": "Security"
+      },
+      {
+        "name": "Fourth"
+      },
+      {
         "name": "Development"
       }
     ],
@@ -57,6 +63,17 @@
     "testLibraries": [
       {
         "name": "Jest",
+        "icon": "jest"
+      },
+      {
+        "name": "Producer",
+        "icon": "jest"
+      },
+      {
+        "name": "Test",
+        "icon": "jest"
+      },{
+        "name": "Test01",
         "icon": "jest"
       },
       {
