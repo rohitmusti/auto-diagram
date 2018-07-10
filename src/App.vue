@@ -105,7 +105,7 @@ export default {
 #app {
     display: grid;
     grid-template-columns: [logo-start test-start source-start hosting-start] 1fr [logo-end test-end organization-start environment-start] 1fr 1fr 1fr [source-end collaboration-start] 1fr [organization-end environment-end collaboration-end hosting-end];
-    grid-template-rows: [logo-start organization-start] 1fr [logo-end organization-end test-start environment-start] 1fr 1fr 1fr [test-end environment-end collaboration-start source-start] 1fr [collaboration-end source-end hosting-start] 1fr [hosting-end];
+    grid-template-rows: [logo-start organization-start] auto [logo-end organization-end test-start environment-start] auto auto auto [test-end environment-end collaboration-start source-start] auto [collaboration-end source-end hosting-start] auto [hosting-end];
     grid-gap: 10px;
 }
 
