@@ -19,7 +19,7 @@
 
     <div class="collaboration-wrapper">
         <app-collaboration
-          v-for="item in input_data.stack.collaborationTools"
+          v-for="item in input_data.stack.collaborationTools" :class="'fab fa-'+ item.icon"
           v-bind:struct="item">
         </app-collaboration>
     </div>
@@ -33,21 +33,21 @@
 
     <div class="source-wrapper">
         <app-source
-          v-for="item in input_data.stack.sourceControl"
+          v-for="item in input_data.stack.sourceControl" :class="'fab fa-'+ item.icon"
           v-bind:struct="item">
         </app-source>
     </div>
 
     <div class="test-wrapper">
         <app-test
-          v-for="item in input_data.stack.testLibraries"
+          v-for="item in input_data.stack.testLibraries" :class="'fab fa-'+ item.icon"
           v-bind:struct="item">
         </app-test>
     </div>
 
     <div class="hosting-wrapper">
         <app-hosting
-          v-for="item in input_data.stack.hosting"
+          v-for="item in input_data.stack.hosting" :class="'fab fa-'+ item.icon"
           v-bind:struct="item">
         </app-hosting>
     </div>

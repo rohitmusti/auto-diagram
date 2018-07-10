@@ -4,7 +4,7 @@
 
     {{substruct.name}}
   </div> -->
-  <i></i>
+  <i> {{substruct.name}} </i>
 </template>
 
 <script>

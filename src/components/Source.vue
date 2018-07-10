@@ -1,7 +1,9 @@
 <template>
-  <div class="source">
+  <!-- <div class="source">
       {{ struct.name }}
-  </div>
+  </div> -->
+  <i> {{struct.name}} </i>
+
 </template>
 
 <script>
