@@ -19,7 +19,7 @@
     border-bottom: 2px solid #d8dcdd;
 }
 
-.host {
+.host:last-child {
     border-bottom: none;
 }
 
