@@ -11,14 +11,15 @@ def copying():
 
     os.system('npm run serve &')
     print('running npm server')
-    os.system('cd ./headless_chrome && chromium --headless --disable-gpu --remote-debugging-port=9222 & ')
+    browser = "Do you use Google Chrome[1] or Chromium[2](only enter the number)? "
+    if (browser == 1):
+    	os.system('cd ./headless_chrome && chromium --headless --disable-gpu --remote-debugging-port=9222 & ')
+    elif (browser == 2):
+    	os.system('cd ./headless_chrome && google-chrome --headless --disable-gpu --remote-debugging-port=9222 & ')
+	
     print('running headless chrome')
     os.system('node ./headless_chrome/app.js &')
     os.system('echo done')
 
 
 copying()
-# os.system(cmd)
-# subprocess.call('npm run serve', shell=True)
-# subprocess.call('cd ./headless_chrome && chromium --headless --remote-debugging-port=9222 --disable-gpu', shell=True)
-# subprocess.call('cd node ./headless_chrome/app.js')
