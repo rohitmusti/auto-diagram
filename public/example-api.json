@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "customerName": "XYZ Corp",
+    "customerName": "ABC Corp",
     "start": "2018-10-08",
     "end": "2018-11-19"
   },
@@ -11,7 +11,7 @@
         "icon": "fas fa-server"
       },
       {
-        "name": "Amazon Web Services",
+        "name": "Open Shift",
         "icon": "fab fa-aws"
       }
     ],
