@@ -1,22 +1,7 @@
 <template>
-  <!-- <div id="collaboration-app">
-    <collaboration-tag
-      v-for="item in list"
-      v-bind:struct="item"
-      v-bind:key="item.id">
-    </collaboration-tag>
-  </div> -->
 
   <div id="app">
-<!--      <div class="logo">
-          <img src="./assets/rhlabs.png">
-      </div>
-    <div class="organization-wrapper">
-        <div class="organization">
-	<div class="box-heading"> <h2>ORGANIZATION</h2> </div>
-            <p>{{ organization }}</p>
-        </div>
-    </div> -->
+
     <div class="content-box-collaboration">
         <div class="collaboration-wrapper">
             <div class="box-heading"> <h2>COLLABORATION</h2> </div>
@@ -64,9 +49,6 @@
             </app-hosting>
         </div>
     </div>
-    <!-- <div class="builder">
-        <img src="./assets/builder.png">
-    </div> -->
 
 
 
@@ -85,6 +67,8 @@ import Test from './components/Test.vue'
 
 import axios from 'axios';
 
+var fileUpload = '/example-api.json';
+
 export default {
   name: 'app',
 
@@ -98,14 +82,14 @@ export default {
 
   data(){
     return{
-      input_data: [],
+      input_data: {},
       organization: ""
     }
   },
 
   mounted(){
     var vueScope = this;
-    axios.get('/example-api.json')
+    axios.get(fileUpload)
     .then(function (response) {
       vueScope.input_data = response.data;
       vueScope.organization = response.data.metadata.customerName;
