@@ -17,6 +17,15 @@ We're following the philosophy laid out in [Consumer-Driven Contracts](https://m
 The API is versioned using [Semver](https://semver.org/). Backwards-compatible feature updates (e.g., new properties added) are indicated by minor releases. Breaking changes (e.g., an endpoint is renamed or a property is removed) are indicated by major releases.
 
 ## Development
+### Using the CLI
+1. Clone the repository.
+2. Navigate to the root folder of the repository.
+3. Run `npm install` to install all necessary packages.
+4. Review the `/JSONS/` folder to see the different pre-set JSON options.
+5. Run `python commandline.py` to create screenshot.
+6. Visit `localhost:3000` before ending the script to take the screenshot.
+7. After visiting localhost:3000, run `CTRL + C` to end the script.
+8. Run `python cleanup.py` to shutdown the servers.
 ### Modifying the Info-Graphic
 1. Navigate to the root folder.
 2. Run `$ npm install` to install the dependencies.
