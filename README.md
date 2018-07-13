@@ -21,11 +21,10 @@ The API is versioned using [Semver](https://semver.org/). Backwards-compatible f
 1. Clone the repository.
 2. Navigate to the root folder of the repository.
 3. Run `npm install` to install all necessary packages.
-4. Review the `/JSONS/` folder to see the different pre-set JSON options.
+4. Review the `./JSONS/` folder to see the different pre-set JSON files or add your own custom file there.
 5. Run `python commandline.py` to create screenshot.
-6. Visit `localhost:3000` before ending the script to take the screenshot.
-7. After visiting localhost:3000, run `CTRL + C` to end the script.
-8. Run `python cleanup.py` to shutdown the servers.
+6. Run `python cleanup.py` to shutdown the servers.
+
 ### Modifying the Info-Graphic
 1. Navigate to the root folder.
 2. Run `$ npm install` to install the dependencies.
@@ -37,9 +36,10 @@ Note: there are two generated links, one local link that is only accessible from
 ### Taking a screenshot using Headless Chrome
 Note: This requires the headless chrome CLI to be installed. [Getting Started](https://developers.google.com/web/updates/20217/04/headless-chrome).
 For this to run you will need an instance of headless chrome running as well as our express server. This can be accomplished with the following command:
-1. Run `$ node headless_chrome/app.js`.
-2. Run `$ google-chrome --headless --remote-debugging-port=9222 --hide-scrollbars`
-3. Open `http://localhost:3000` to view the screenshot in your browser.
+1. Run `$ npm run serve` to start the server.
+2. Run `$ node headless_chrome/app.js`.
+3. Run `$ google-chrome --headless --remote-debugging-port=9222 --hide-scrollbars`
+4. Open `http://localhost:3000` to view the screenshot in your browser.
 
 ## Front-end dev resources
 
