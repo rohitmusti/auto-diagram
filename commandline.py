@@ -8,15 +8,15 @@ def copying():
     original = './public/example-api.json'
     copyfile(file, original)
     if (browser == 1):
-        headlessCMD += "chromium --headless --disable-gpu --hide-scrollbars --remote-debugging-port=9222 & "
-        os.system('npm run serve &')
+        headlessCMD += "chromium --headless --node-sandbox --disable-gpu --hide-scrollbars --remote-debugging-port=9222 & "
         os.system(headlessCMD)
-        os.system('sleep 10 && node ./headless_chrome/screenshot.js && mv ./headless_chrome/output.jpeg ./output.jpeg && killall npm && killall node && killall chromium && echo "done"')
+        os.system('npm run serve &')
+        os.system('sleep 5 &&  node ./headless_chrome/screenshot.js && mv ./headless_chrome/output.jpeg ./output.jpeg && killall npm && killall node && killall chromium && echo "done"')
     elif (browser == 2):
-        headlessCMD += "google-chrome-headless --headless --disable-gpu --hide-scrollbars --remote-debugging-port=9222 & "
-        os.system(headlessCMD)
+        headlessCMD += "google-chrome-stable --headless --disable-gpu --hide-scrollbars --remote-debugging-port=9222 & "
         os.system('npm run serve &')
-        os.system('sleep 10 && node ./headless_chrome/screenshot.js && mv ./headless_chrome/output.jpeg ./output.jpeg && killall npm && killall node && killall google-chrome && echo "done"')
+        os.system(headlessCMD)
+        os.system(' node ./headless_chrome/screenshot.js && mv ./headless_chrome/output.jpeg ./output.jpeg && killall npm && killall node && killall chrome && echo "done"')
 
 
 
