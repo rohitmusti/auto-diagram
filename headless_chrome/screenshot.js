@@ -41,9 +41,12 @@ module.exports = function takeScreenShot(){
         await Emulation.setDeviceMetricsOverride(deviceMetrics);
         await Emulation.setVisibleSize({width: viewportWidth, height: height});
 
+	var temp = Page.getCookies()
+	var stringer = "this is old"
+	temp = temp.then(function(result) { console.log(result.cookies[0].name); stringer = result.cookies[0].name; }); 
+	console.log(stringer)
         // get the base64 screenshot.
         const screenshot = await Page.captureScreenshot({format});
-
         // Save the base64 screenshot to binary image file
         const buffer = new Buffer(screenshot.data, 'base64');
         file.writeFile('./headless_chrome/output.jpeg', buffer, 'base64', function(err) {
