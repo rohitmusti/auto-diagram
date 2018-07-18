@@ -22,8 +22,8 @@ The API is versioned using [Semver](https://semver.org/). Backwards-compatible f
 2. Navigate to the root folder of the repository.
 3. Run `npm install` to install all necessary packages.
 4. Review the `./JSONS/` folder to see the different pre-set JSON files or add your own custom file there.
-5. Run `python3 commandline.py` to create screenshot.
-6. Run `python3 cleanup.py` to shutdown the servers.
+5. Ensure that python3 is installed.
+6. Run `$ ./screenshot.sh`.
 
 ### Modifying the Info-Graphic
 1. Navigate to the root folder.
